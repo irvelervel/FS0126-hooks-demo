@@ -14,8 +14,8 @@ import { useState } from 'react'
 const StateExample = function () {
   // GLI HOOKS VANNO QUI
 
-  // useState() è una funzione che ritorna un array di DUE ELEMENTI
   const [counter, setCounter] = useState(0) // questo 0 indica il valore iniziale della proprietà di stato
+  // useState() è una funzione che ritorna un array di DUE ELEMENTI
   // counter sarebbe la vostra singola proprietà dello state, mentre setCounter è l'unico modo
   // per cambiare il valore di counter (perchè counter è READ-ONLY)
 
@@ -28,8 +28,22 @@ const StateExample = function () {
   return (
     <div>
       <h2>Componente STATEEXAMPLE</h2>
-      <Button variant="info">INCREMENTA</Button>
+      <Button
+        variant="info"
+        onClick={() => {
+          setCounter(counter + 1)
+        }}
+      >
+        INCREMENTA
+      </Button>
       <h4>Il valore del counter è: {counter}</h4>
+      <h4
+        onClick={() => {
+          setName(name === 'Mario' ? 'Luigi' : 'Mario')
+        }}
+      >
+        Mi chiamo {name}
+      </h4>
     </div>
   )
 }
